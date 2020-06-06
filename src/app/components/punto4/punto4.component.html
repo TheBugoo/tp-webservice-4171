@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EstadisticasCovid</title>
+  </head>
+  <body>
+    <div class="container">
+      <hr />
+      <div class="row">
+        <content class="col-md-12">
+          <div class="col-md-12">
+            <form class="border p-md-2 pl-md-5 pr-md-5 ml-md-5 mr-md-5">
+              <h4 align="center">Estadisticas Covid</h4>
+              <hr />
+              <div class="form-group">
+                <label for="inputEmail3" class="col-md-2 col-form-label"
+                  >Paises</label
+                >
+                <div class="col-md-12">
+                  <select
+                    class="form-control"
+                    id="exampleFormControlSelect1"
+                    name="pais"
+                    #country
+                  >
+                    <option value="usa">Estados Unidos</option>
+                    <option value="spain">España</option>
+                    <option value="germany">Reino Unido</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="china">China</option>
+                    <option value="japan">Japón</option>
+                    <option value="brazil">Brazil</option>
+                    <option value="chile">Chile</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">Casos Confirmados</div>
+                <div class="col-sm-10 custom-checkbox custom-control">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="gridCheck1"
+                      (change)="changeCasos()"
+                    />
+                    <label class="form-check-label" for="gridCheck1">
+                      Si
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">Curados</div>
+                <div class="col-sm-10 custom-checkbox custom-control">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="gridCheck2"
+                      (change)="changeRecuperados()"
+                    />
+                    <label class="form-check-label" for="gridCheck2">
+                      Si
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">Fallecidos</div>
+                <div class="col-sm-10 custom-checkbox custom-control">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      (change)="change()"
+                      id="gridCheck3"
+                    />
+                    <label class="form-check-label" for="gridCheck3">
+                      Si
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" align="center">
+                <button
+                  id="enviar"
+                  type="submit"
+                  value="submit"
+                  class="btn btn-primary btn-lg mr-2"
+                  (click)="consulta(country)"
+                >
+                  Filtrar Seleccion
+                </button>
+                <button
+                  id="mostrar"
+                  type="submit"
+                  class="btn btn-primary btn-lg ml-2"
+                  (click)="ngOnInit()"
+                >
+                  Mostrar Todos los Paises
+                </button>
+              </div>
+            </form>
+          </div>
+          <hr />
+          <div class="col-md-12">
+            <tr>
+              <strong><h4></h4></strong>
+            </tr>
+          </div>
+
+          <div *ngIf="filtrado == false" class="scrollable col-md-12">
+            <table class="table table-responsive-sm table-hover" id="conversor">
+              <thead id="covidtitulo">
+                <tr>
+                  <th scope="col">Ubicacion</th>
+                  <th scope="col">Casos por 1 mill. de personas</th>
+                  <th scope="col">Casos Confirmados</th>
+                  <th scope="col">Nuevos casos</th>
+                  <th scope="col">Nuevas Muertes</th>
+                  <th scope="col">Fallecidos</th>
+                  <th scope="col">Recuperados</th>
+                </tr>
+              </thead>
+              <tbody id="covid">
+                <tr *ngFor="let item of paises">
+                  <th scope="row" class="p-1 pl-1 pt-1">
+                    <img
+                      src="../../../assets/imagenes/globes.jpg"
+                      alt="ARS"
+                      align="left"
+                    />
+                    <div>
+                      <p class="pl-5 pt-2">{{ item.Country_text }}</p>
+                    </div>
+                  </th>
+                  <td>{{ item["Total Cases_text"] }}</td>
+                  <td>{{ item["Active Cases_text"] }}</td>
+                  <td>{{ item["New Cases_text"] }}</td>
+                  <td>{{ item["New Deaths_text"] }}</td>
+                  <td>{{ item["Total Deaths_text"] }}</td>
+                  <td>{{ item["Total Recovered_text"] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div *ngIf="filtrado" class="scrollable col-md-12">
+            <table class="table table-responsive-sm table-hover" id="conversor">
+              <thead id="covidtitulo">
+                <tr>
+                  <th scope="col">Ubicacion</th>
+                  <th *ngIf="filtradoc" scope="col">
+                    Casos por 1 mill. de personas
+                  </th>
+                  <th *ngIf="filtradoc" scope="col">Casos Confirmados</th>
+                  <th *ngIf="filtradoc" scope="col">Nuevos casos</th>
+                  <th *ngIf="filtradof" scope="col">Nuevas Muertes</th>
+                  <th *ngIf="filtradof" scope="col">Fallecidos</th>
+                  <th *ngIf="filtrador" scope="col">Recuperados</th>
+                </tr>
+              </thead>
+              <tbody id="covid">
+                <tr>
+                  <th scope="row" class="p-1 pl-1 pt-1">
+                    <img
+                      src="../../../assets/imagenes/globes.jpg"
+                      alt="ARS"
+                      align="left"
+                    />
+                    <div>
+                      <p class="pl-5 pt-2">{{ a.Country_text }}</p>
+                    </div>
+                  </th>
+                  <td *ngIf="filtradoc">{{ a["Total Cases_text"] }}</td>
+                  <td *ngIf="filtradoc">{{ a["Active Cases_text"] }}</td>
+                  <td *ngIf="filtradoc">{{ a["New Cases_text"] }}</td>
+                  <td *ngIf="filtradof">{{ a["New Deaths_text"] }}</td>
+                  <td *ngIf="filtradof">{{ a["Total Deaths_text"] }}</td>
+                  <td *ngIf="filtrador">{{ a["Total Recovered_text"] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </content>
+      </div>
+    </div>
+  </body>
+</html>

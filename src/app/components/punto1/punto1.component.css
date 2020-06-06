@@ -1,0 +1,39 @@
+a {
+  color: black;
+}
+
+#portada img {
+  width: 100%;
+  height: 20em;
+}
+h6 {
+  color: white;
+  background-color: red;
+  position: relative;
+  bottom: 0.6em;
+}
+#new1 h6 {
+  width: 100%;
+}
+#content {
+  height: 100px;
+}
+.card {
+  border: none;
+}
+#news img {
+  height: 12em;
+}
+#news p {
+  position: relative;
+  bottom: 1em;
+}
+#news {
+  line-height: 1em;
+}
+#oferta {
+  padding-top: 3em;
+}
+#oferta img {
+  height: 32em;
+}

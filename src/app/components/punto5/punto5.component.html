@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUGOSearch</title>
+  </head>
+  <body>
+    <div class="container">
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          <aside class="col-md-12">
+            <div class="col-md-12" align="center">
+              <p>
+                <strong>
+                  <u>Descripcion:</u> BuscadorApi, Ingresa lo que deseas ver,
+                  selecciona Buscar, y listara las imagenes correspondientes
+                  encontradas.
+                </strong>
+              </p>
+            </div>
+            <div align="center" class="col-md-12">
+              <img
+                class="img-fluid"
+                style="border-radius: 50%;"
+                align="center"
+                src="../../../assets/imagenes/BUGOSearch.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="col-md-12 justify-content-center pt-2"
+              style="padding-left: 26%;"
+            >
+              <div
+                class="input-group"
+                style="width: 65%; border-style: groove; border-radius: 10px;"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inlineFormInputGroupUsername"
+                  placeholder="Que imagen desea buscar"
+                  [(ngModel)]="q"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text btn icon-smile2">
+                    <strong
+                      ><i class="pb-1" (click)="buscarImagen(q)"
+                        >- Buscar</i
+                      ></strong
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div class="row mt-3 pt-1" id="busquedas">
+            <div class="col-md-3">
+              <img id="card" class="img-fluid" src="{{ a[0].url }}" alt="..." />
+            </div>
+            <div class="col-md-3">
+              <img id="card" class="img-fluid" src="{{ a[1].url }}" alt="..." />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a2[2].url }}"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a2[3].url }}"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a3[4].url }}"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a3[5].url }}"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a4[6].url }}"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a4[7].url }}"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a5[8].url }}"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                id="card"
+                class="img-fluid"
+                src="{{ a5[9].url }}"
+                alt="..."
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </body>
+</html>

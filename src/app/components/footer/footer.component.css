@@ -1,0 +1,8 @@
+#pie p {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: wheat;
+  height: 3em;
+  width: 100%;
+  background-image: url(../../../assets/imagenes/footer.jpg);
+  text-align: center;
+}

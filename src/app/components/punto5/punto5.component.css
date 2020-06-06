@@ -1,0 +1,20 @@
+#busquedas img {
+  width: 17em;
+  height: 12em;
+  padding: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+#busquedas {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(85, 3, 3, 0.664);
+}
+#card {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}

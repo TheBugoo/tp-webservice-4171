@@ -1,0 +1,44 @@
+#logo {
+  width: 100%;
+  height: 6em;
+}
+
+#tablacont td {
+  color: blue;
+}
+tbody p {
+  font-size: 10pt;
+}
+tbody img {
+  position: relative;
+  top: 0.5em;
+  left: 0.6em;
+}
+form {
+  color: rgba(255, 255, 255, 0.897);
+  background: linear-gradient(#2a2057 0%, #4d3aa0 100%);
+}
+form hr {
+  background-color: rgba(255, 255, 255, 0.897);
+}
+.scrollable {
+  overflow: scroll;
+  height: 20em;
+  overflow-x: unset;
+}
+#covid td {
+  text-align: center;
+}
+#covidtitulo {
+  color: teal;
+}
+#horoscop img {
+  width: 5em;
+  margin: 1em;
+}
+#horoscop {
+  font-family: cursive;
+}
+#conversor img {
+  width: 1.5em;
+}
