@@ -18,3 +18,16 @@
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
+#botones {
+  padding-left: 42%;
+}
+@media all and (max-width: 800px) {
+  #botones {
+    padding-left: 38%;
+  }
+}
+@media all and (max-width: 767px) {
+  #botones {
+    padding-left: 0%;
+  }
+}

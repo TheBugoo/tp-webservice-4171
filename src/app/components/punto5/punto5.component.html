@@ -10,25 +10,50 @@
       <hr />
       <div class="row">
         <div class="col-md-12">
+          <div class="col-md-12" align="center">
+            <p>
+              <strong>
+                <u>Descripcion:</u> Ingresa lo que deseas ver, selecciona
+                Buscar, y listara las imagenes o paginas correspondientes
+                encontradas(espere que cargue).
+              </strong>
+            </p>
+          </div>
+          <div align="center" class="col-md-12">
+            <img
+              class="img-fluid"
+              style="border-radius: 50%;"
+              align="center"
+              src="../../../assets/imagenes/BUGOSearch.jpg"
+              alt=""
+            />
+          </div>
+          <br />
+          <div
+            class="btn-group col-md-4"
+            role="group"
+            aria-label="Basic example"
+            id="botones"
+          >
+            <button
+              type="button"
+              class="btn btn-info"
+              (click)="cambiarDeLado()"
+            >
+              Buscador
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="cambiarDeLado2()"
+            >
+              Imagen
+            </button>
+          </div>
+        </div>
+        <div class="col-md-12" *ngIf="image == true">
+          <br />
           <aside class="col-md-12">
-            <div class="col-md-12" align="center">
-              <p>
-                <strong>
-                  <u>Descripcion:</u> BuscadorApi, Ingresa lo que deseas ver,
-                  selecciona Buscar, y listara las imagenes correspondientes
-                  encontradas.
-                </strong>
-              </p>
-            </div>
-            <div align="center" class="col-md-12">
-              <img
-                class="img-fluid"
-                style="border-radius: 50%;"
-                align="center"
-                src="../../../assets/imagenes/BUGOSearch.jpg"
-                alt=""
-              />
-            </div>
             <div
               class="col-md-12 justify-content-center pt-2"
               style="padding-left: 26%;"
@@ -56,7 +81,7 @@
               </div>
             </div>
           </aside>
-          <div class="row mt-3 pt-1" id="busquedas">
+          <div class="row mt-3 pt-1" id="busquedas" *ngIf="q != null">
             <div class="col-md-3">
               <img id="card" class="img-fluid" src="{{ a[0].url }}" alt="..." />
             </div>
@@ -128,6 +153,116 @@
               />
             </div>
           </div>
+        </div>
+        <div class="col-md-12" *ngIf="busq == true">
+          <content class="col-md-12">
+            <div
+              class="col-md-12 justify-content-center pt-2"
+              style="padding-left: 26%;"
+            >
+              <div
+                class="input-group"
+                style="width: 65%; border-style: groove; border-radius: 10px;"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="palabra"
+                  placeholder="Que desea buscar"
+                  [(ngModel)]="palabra"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text btn icon-smile2">
+                    <strong
+                      ><i class="pb-1" (click)="buscarWebs(palabra)"
+                        >- Buscar</i
+                      ></strong
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[0].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[0].url }}">{{ busqueda[0].title }}</a>
+              </h2>
+              <p>{{ busqueda[0].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[1].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[1].url }}">{{ busqueda[1].title }}</a>
+              </h2>
+              <p>{{ busqueda[1].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[2].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[2].url }}">{{ busqueda[2].title }}</a>
+              </h2>
+              <p>{{ busqueda[2].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[3].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[3].url }}">{{ busqueda[3].title }}</a>
+              </h2>
+              <p>{{ busqueda[3].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[4].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[4].url }}">{{ busqueda[4].title }}</a>
+              </h2>
+              <p>{{ busqueda[4].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[5].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[5].url }}">{{ busqueda[5].title }}</a>
+              </h2>
+              <p>{{ busqueda[5].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[6].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[6].url }}">{{ busqueda[6].title }}</a>
+              </h2>
+              <p>{{ busqueda[6].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[7].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[7].url }}">{{ busqueda[7].title }}</a>
+              </h2>
+              <p>{{ busqueda[7].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[8].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[8].url }}">{{ busqueda[8].title }}</a>
+              </h2>
+              <p>{{ busqueda[8].snippet }}</p>
+            </div>
+            <br />
+            <div class="col-md-8">
+              <h5 style="color: green;">{{ busqueda[9].url }}</h5>
+              <h2>
+                <a href="{{ busqueda[9].url }}">{{ busqueda[9].title }}</a>
+              </h2>
+              <p>{{ busqueda[9].snippet }}</p>
+            </div>
+          </content>
         </div>
       </div>
     </div>

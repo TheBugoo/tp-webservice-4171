@@ -23,4 +23,19 @@ export class PruebasService {
       httpOptions
     );
   }
+  public buscarPaginas(busqueda: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'x-rapidapi-host': 'google-search1.p.rapidapi.com',
+        'x-rapidapi-key': '637978f0b9msh538cb43be9e699cp1033a2jsn07b38796549c',
+      }),
+      params: {
+        q: busqueda,
+      },
+    };
+    return this.http.get(
+      'https://google-search1.p.rapidapi.com/google-search',
+      httpOptions
+    );
+  }
 }

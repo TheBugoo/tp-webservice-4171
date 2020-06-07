@@ -20,6 +20,23 @@ export class ConversorService {
       httpOptions
     );
   }
+  /* getConversor2(from: string, to: string, q: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com',
+        'X-RapidAPI-Key': '637978f0b9msh538cb43be9e699cp1033a2jsn07b38796549c',
+      }),
+      params: {
+        from:from,
+        to:to,
+        q:q,
+      },
+    };
+    return this.http.get(
+      'https://currency-exchange.p.rapidapi.com/exchange',
+      httpOptions
+    );
+  }*/
   // public listarMoneda(demonto, amonto, valor): Observable<any> {
   // const httpOptions = {
   // headers: new HttpHeaders({
